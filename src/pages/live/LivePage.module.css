@@ -2,20 +2,20 @@
   background: var(--color-dark-red);
   color: var(--color-white);
   width: 100vw;
-  min-height: calc(100vh - 5.7rem);
-  margin-top: 5.1rem; /* clears the nav bar's own height (5.1rem) so its transparent background doesn't overlap this page's background */
-  padding: 4rem 0;
+  min-height: calc(100vh - var(--page-min-height-offset));
+  margin-top: var(--nav-height); /* clears the nav bar's own height so its transparent background doesn't overlap this page's background */
+  padding: var(--space-40) 0;
 }
 
 .content {
-  max-width: 110rem;
+  max-width: var(--content-width-sm);
   margin: 0 auto;
 }
 
 .header {
   text-align: center;
-  font-size: 8rem;
-  font-weight: 200;
+  font-size: var(--font-size-80);
+  font-weight: var(--font-weight-light);
 }
 
 .list {
@@ -26,13 +26,13 @@
 
 .noShows {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: var(--font-size-16);
   color: var(--color-white);
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .livePage {
-    padding: 1rem 0 8rem;
+    padding: var(--space-10) 0 var(--space-80);
     margin-top: 0;
   }
 }

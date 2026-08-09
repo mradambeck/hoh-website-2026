@@ -1,53 +1,53 @@
 .news {
-  margin: 6rem auto;
+  margin: var(--space-60) auto;
 }
 
 .header {
   color: var(--color-white);
   text-align: center;
-  font-size: 3.6rem;
-  font-weight: 200;
+  font-size: var(--font-size-36);
+  font-weight: var(--font-weight-light);
   margin: 0;
 }
 
 .list {
-  max-width: 120rem;
-  margin: 4rem auto;
-  padding: 0 2.6rem;
+  max-width: var(--content-width-lg);
+  margin: var(--space-40) auto;
+  padding: 0 var(--space-26);
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--space-40);
 }
 
 .item {
   display: flex;
-  gap: 2.6rem;
+  gap: var(--space-26);
   align-items: center;
 }
 
 .image {
   width: 20vw;
-  max-width: 24rem;
+  max-width: var(--space-240);
   height: 20vw;
-  max-height: 24rem;
+  max-height: var(--space-240);
   object-fit: cover;
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: var(--space-16);
   align-items: flex-start;
 }
 
 .title {
-  font-size: 2.4rem;
-  font-weight: 200;
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-light);
   margin: 0;
 }
 
 .description {
-  margin: 0 0 1.6rem;
+  margin: 0 0 var(--space-16);
 }
 
 .cta {
@@ -55,7 +55,7 @@
   border-color: var(--color-white);
 }
 
-@media (max-width: 830px) {
+@media (--tablet) {
   .item {
     flex-direction: column;
     align-items: center;

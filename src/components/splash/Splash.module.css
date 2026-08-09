@@ -22,7 +22,7 @@
   /* opacity fade-in is animated by motion */
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .splash {
     height: auto;
   }

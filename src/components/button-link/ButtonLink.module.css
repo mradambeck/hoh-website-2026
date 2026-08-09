@@ -3,17 +3,17 @@
   color: var(--color-black);
   background: transparent;
   border: 1px solid var(--color-dark-red);
-  padding: 0.8rem 1.6rem;
-  border-radius: 0.4rem;
-  font-size: 1.4rem;
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-14);
   cursor: pointer;
   text-transform: uppercase;
   text-align: center;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  opacity: var(--opacity-muted);
+  transition: var(--transition-fast);
 }
 
 .buttonLink:hover,
 .buttonLink:focus-visible {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }

@@ -3,9 +3,9 @@
   top: 0;
   margin: auto;
   width: 100%;
-  z-index: 10;
+  z-index: var(--z-nav);
   background: transparent;
-  max-width: 180rem;
+  max-width: var(--nav-max-width);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -28,9 +28,9 @@
 
 .logoVisible {
   display: block;
-  height: 2.8rem;
+  height: var(--space-28);
   width: auto;
-  margin-left: 1.6rem;
+  margin-left: var(--space-16);
 }
 
 .toggle {
@@ -39,25 +39,25 @@
 
 .links {
   display: flex;
-  gap: 1.6rem;
+  gap: var(--space-16);
   list-style: none;
   margin: 0;
-  padding: 1.6rem;
+  padding: var(--space-16);
 }
 
 .links a {
   text-decoration: none;
   color: var(--color-white);
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  opacity: var(--opacity-muted);
+  transition: var(--transition-fast);
 }
 
 .links a:hover,
 .links a:focus-visible {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .nav {
     position: relative;
     display: flex;
@@ -79,7 +79,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 2.8rem;
+    height: var(--space-28);
     width: auto;
     /* .logoVisible's margin-left is a desktop-only spacing concern (see
        below) and would otherwise throw off this absolute centering. */
@@ -89,9 +89,9 @@
   .toggle {
     display: block;
     position: relative;
-    width: 4.4rem;
-    height: 4.4rem;
-    margin: 0.8rem 1.6rem;
+    width: var(--space-44);
+    height: var(--space-44);
+    margin: var(--space-8) var(--space-16);
     padding: 0;
     background: transparent;
     border: none;
@@ -115,9 +115,9 @@
     width: 100%;
     flex-direction: column;
     gap: 0;
-    padding: 0 1.6rem 1.6rem;
+    padding: 0 var(--space-16) var(--space-16);
     background: var(--color-black);
-    z-index: 20;
+    z-index: var(--z-nav-menu);
     /* opacity/transform (open/close animation) are handled by motion;
        mounting is gated by AnimatePresence instead of visibility */
   }
@@ -130,11 +130,11 @@
 
   .links a {
     display: block;
-    padding: 1.2rem 0;
+    padding: var(--space-12) 0;
   }
 
   .mobileSocialLinks {
-    padding: 1.6rem 0;
+    padding: var(--space-16) 0;
   }
 
   /* Beats .links a's specificity so the icon links keep their own

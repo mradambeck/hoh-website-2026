@@ -2,27 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.6rem;
+  gap: var(--space-16);
 }
 
 .label {
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
 }
 
 .inputRow {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-10);
 }
 
 .input {
   background: transparent;
   border: 1px solid var(--color-white);
-  border-radius: 0.4rem;
-  padding: 0.8rem 1.6rem;
-  min-width: 24rem;
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-16);
+  min-width: var(--space-240);
   color: var(--color-white);
-  font-size: 1.4rem;
+  font-size: var(--font-size-14);
   font-family: inherit;
 }
 
@@ -39,38 +39,38 @@
   background: var(--color-dark-red);
   color: var(--color-white);
   border: 1px solid var(--color-dark-red);
-  border-radius: 0.4rem;
-  padding: 0.8rem 1.6rem;
-  font-size: 1.4rem;
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-16);
+  font-size: var(--font-size-14);
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  opacity: var(--opacity-muted);
+  transition: var(--transition-fast);
 }
 
 .button:hover:not(:disabled),
 .button:focus-visible:not(:disabled) {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
 
 .button:disabled {
-  opacity: 0.6;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
 
 .error {
   margin: 0;
   color: var(--color-yellow);
-  font-size: 1.4rem;
+  font-size: var(--font-size-14);
 }
 
 .success {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: var(--font-size-16);
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .inputRow {
     flex-direction: column;
     width: 100%;
