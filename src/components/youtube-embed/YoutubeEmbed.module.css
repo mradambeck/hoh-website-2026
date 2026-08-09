@@ -4,7 +4,7 @@
   /* Caps at the iframe's original 560x315 embed size on wide screens,
      and shrinks with the viewport (keeping the same 16:9 ratio) on
      narrow ones instead of overflowing past the page's width. */
-  max-width: 56rem;
+  max-width: var(--embed-max-width);
   aspect-ratio: 560 / 315;
 }
 
@@ -15,7 +15,7 @@
      own stacking context and would otherwise paint above this overlay
      despite position: absolute — see MusicLinks.module.css for the same
      issue. Explicit z-index forces the correct order regardless. */
-  z-index: 1;
+  z-index: var(--z-overlay);
 }
 
 .youtubeEmbed {

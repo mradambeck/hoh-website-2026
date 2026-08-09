@@ -2,16 +2,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  opacity: var(--opacity-muted);
+  transition: var(--transition-fast);
 }
 
 .socialLink:hover,
 .socialLink:focus-visible {
-  opacity: 1;
+  opacity: var(--opacity-full);
 }
 
 .logo {
-  height: 2.4rem;
+  height: var(--space-24);
   width: auto;
 }

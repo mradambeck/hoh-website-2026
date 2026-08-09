@@ -10,20 +10,20 @@
      despite position: absolute, since they'd then be ordered by DOM
      position rather than by position value. Explicit z-index forces the
      correct order regardless. */
-  z-index: 1;
+  z-index: var(--z-overlay);
 }
 
 .musicLinks {
   display: flex;
   flex-direction: row;
-  gap: 6rem;
+  gap: var(--space-60);
 }
 
 .albumArt {
   width: 28vw;
-  max-width: 32rem;
+  max-width: var(--space-320);
   height: 28vw;
-  max-height: 32rem;
+  max-height: var(--space-320);
   object-fit: cover;
   flex-shrink: 0;
   /* No flex-grow: it only grows width (the main axis in a row), not
@@ -39,11 +39,11 @@
 .playerAndLinks {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-20);
   flex-grow: 2;
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .musicLinks {
     flex-direction: column;
     align-items: center;

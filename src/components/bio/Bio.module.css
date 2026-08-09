@@ -1,6 +1,6 @@
 .bio {
-  max-width: 120rem;
-  margin: 4rem auto;
+  max-width: var(--content-width-lg);
+  margin: var(--space-40) auto;
   line-height: 1.6;
-  padding: 0 2.6rem;
+  padding: 0 var(--space-26);
 }

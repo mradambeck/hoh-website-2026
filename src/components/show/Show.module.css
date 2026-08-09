@@ -4,69 +4,69 @@
 .show {
   color: var(--color-black);
   background: var(--color-white);
-  margin: 0 1.2rem;
+  margin: 0 var(--space-12);
   transform: skew(10deg, 0.5deg);
-  padding: 1.6rem;
+  padding: var(--space-16);
 }
 
 li + li > .show {
-  margin-top: 2rem;
+  margin-top: var(--space-20);
 }
 
 /* Inner layer: actual grid layout + counter-skew. */
 .content {
   display: grid;
   grid-template-columns: 15rem minmax(15rem, 22rem) 1fr 12rem auto;
-  column-gap: 1.6rem;
+  column-gap: var(--space-16);
   align-items: center;
-  padding: 1.6rem;
+  padding: var(--space-16);
   transform: skew(-10deg, -0.5deg);
 }
 
 .withDivider {
   border-right: 1px solid var(--color-light-grey);
-  padding-right: 1.6rem;
+  padding-right: var(--space-16);
 }
 
 .date {
   text-transform: uppercase;
-  font-size: 3.6rem;
+  font-size: var(--font-size-36);
   text-align: right;
   box-sizing: border-box;
 }
 
 .time {
-  font-size: 1.2rem;
+  font-size: var(--font-size-12);
   color: var(--color-dark-grey);
 }
 
 .year {
-  font-size: 1.4rem;
+  font-size: var(--font-size-14);
   color: var(--color-med-grey);
-  font-weight: 500;
-  margin-bottom: 0.4rem;
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-4);
 }
 
 .venue {
-  font-size: 1.4rem;
+  font-size: var(--font-size-14);
 }
 
 .location {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .eventName {
-  font-weight: 600;
-  font-size: 1.6rem;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-16);
   color: var(--color-black);
 }
 
 .lineup {
-  font-size: 1.4rem;
+  font-size: var(--font-size-14);
   color: var(--color-dark-grey);
 }
 
-@media (max-width: 774px) {
+@media (--mobile) {
   .show {
     transform: none;
     transform: skew(1deg, 0.5deg);
@@ -74,7 +74,7 @@ li + li > .show {
 
   .content {
     grid-template-columns: 1fr;
-    row-gap: 0.8rem;
+    row-gap: var(--space-8);
     transform: skew(-1deg, -0.5deg);
   }
 
