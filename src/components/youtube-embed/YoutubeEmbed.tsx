@@ -29,7 +29,9 @@ const YoutubeEmbed = ({ id, title, className }: Props) => {
       </AnimatePresence>
       <motion.iframe
         className={
-          className ? `${styles.youtubeEmbed} ${className}` : styles.youtubeEmbed
+          className
+            ? `${styles.youtubeEmbed} ${className}`
+            : styles.youtubeEmbed
         }
         initial={{ opacity: 0 }}
         animate={{ opacity: loaded ? 1 : 0 }}
