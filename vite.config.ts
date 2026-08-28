@@ -1,3 +1,4 @@
+import { copyFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
@@ -20,11 +21,29 @@ function rewriteAdminIndex(): Plugin {
   };
 }
 
+// GitHub Pages is a static host: it only returns index.html for the exact
+// root request, so direct hits on client-side routes (e.g. /live) 404.
+// GitHub Pages serves 404.html's content for any unmatched path without
+// changing the URL, so duplicating index.html as 404.html lets the SPA
+// boot normally and react-router render the right route from the URL.
+function spaFallback404(): Plugin {
+  return {
+    name: "spa-fallback-404",
+    apply: "build",
+    closeBundle() {
+      copyFileSync(
+        path.resolve(__dirname, "dist/index.html"),
+        path.resolve(__dirname, "dist/404.html"),
+      );
+    },
+  };
+}
+
 // Custom domain (see public/CNAME) serves the site from the root,
 // so no base path is needed. If you ever drop the custom domain and
 // serve from https://<user>.github.io/<repo>/, set base: "/<repo>/".
 export default defineConfig({
-  plugins: [react(), imagetools(), rewriteAdminIndex()],
+  plugins: [react(), imagetools(), rewriteAdminIndex(), spaFallback404()],
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, "src/components"),
