@@ -6,6 +6,7 @@ import styles from "./LivePage.module.css";
 
 function LivePage() {
   const shows = getUpcomingShows();
+  console.log(shows);
   return (
     <>
       <title>Live & Tour Dates | Houses of Heaven</title>
