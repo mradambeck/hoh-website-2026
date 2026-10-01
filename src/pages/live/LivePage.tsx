@@ -44,8 +44,8 @@ function LivePage() {
                 }),
             ...(show.date && show.showTime
               ? { startDate: generateISO(show.date, show.showTime) }
-              : { startDate: show.date }),
-            ...(show.doorTime
+              : { startDate: generateISO(show.date) }),
+            ...(show.date && show.doorTime
               ? { doorTime: generateISO(show.date, show.doorTime) }
               : {}),
             performer: [
