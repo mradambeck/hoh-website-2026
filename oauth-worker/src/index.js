@@ -84,6 +84,7 @@ function htmlMessagePage({ success, provider, token, error, siteOrigin }) {
         var success = ${success ? "true" : "false"};
         var errorText = ${jsLiteral(error || "")};
         var fallbackUrl = ${jsLiteral(fallbackUrl)};
+        var allowedOrigins = ${jsLiteral(ALLOWED_SITE_ORIGINS)};
         var statusEl = document.getElementById('status');
         var done = false;
 
@@ -103,8 +104,15 @@ function htmlMessagePage({ success, provider, token, error, siteOrigin }) {
           }
         }
 
+        // Only answer Decap's echo from the admin window. Extensions
+        // (password managers etc.) also post messages into this page;
+        // answering one of those sends the token to the wrong origin,
+        // where the browser silently drops it.
         function receiveMessage(e) {
           if (done || !window.opener) return;
+          if (e.source !== window.opener) return;
+          if (e.data !== 'authorizing:' + provider) return;
+          if (allowedOrigins.indexOf(e.origin) === -1) return;
           done = true;
           window.opener.postMessage(message, e.origin);
           window.removeEventListener('message', receiveMessage, false);
