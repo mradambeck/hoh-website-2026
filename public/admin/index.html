@@ -11,6 +11,24 @@
     <link rel="cms-config-url" type="text/yaml" href="/admin/config.yml" />
   </head>
   <body>
+    <script>
+      // Fallback login path: if the OAuth popup loses its link back to
+      // this window (window.opener severed by the browser), the worker
+      // redirects here with #decap_token=... instead. Store it the way
+      // Decap stores a logged-in user, then strip it from the URL so it
+      // doesn't linger in history.
+      (function () {
+        var match = window.location.hash.match(/[#&]decap_token=([^&]+)/);
+        if (!match) return;
+        try {
+          window.localStorage.setItem(
+            "decap-cms-user",
+            JSON.stringify({ token: decodeURIComponent(match[1]), backendName: "github" }),
+          );
+        } catch (e) {}
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      })();
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
