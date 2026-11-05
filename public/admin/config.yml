@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: mradambeck/hoh-website-2020
+  repo: mradambeck/hoh-website-2026
   branch: main
   # OAuth handshake for the GitHub backend can't be done from a static
   # site, so it's proxied through a small Cloudflare Worker.
