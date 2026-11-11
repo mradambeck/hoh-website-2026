@@ -1,0 +1,30 @@
+.notFoundPage {
+  background: var(--color-dark-red);
+  color: var(--color-white);
+  width: 100vw;
+  min-height: calc(100vh - var(--page-min-height-offset));
+  margin-top: var(--nav-height);
+  padding: var(--space-40) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+}
+
+.code {
+  font-size: var(--font-size-80);
+  font-weight: var(--font-weight-light);
+}
+
+.message {
+  font-size: var(--font-size-24);
+  margin: var(--space-20) 0 var(--space-30);
+}
+
+.homeLink {
+  color: var(--color-white);
+  text-decoration: underline;
+}

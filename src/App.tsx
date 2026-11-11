@@ -6,6 +6,7 @@ import LivePage from "./pages/live/LivePage";
 import MusicPage from "./pages/music/MusicPage";
 import VideoPage from "./pages/video/VideoPage";
 import ContactPage from "./pages/contact/ContactPage";
+import NotFoundPage from "./pages/not-found/NotFoundPage";
 import styles from "./App.module.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/music" element={<MusicPage />} />
           <Route path="/video" element={<VideoPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
